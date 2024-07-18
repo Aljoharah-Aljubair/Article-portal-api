@@ -9,7 +9,7 @@ A Spring Boot RESTful API for a simple article portal. Features include user reg
 - [Examples](#examples)
 
 ## Features
-- Simple user registration using emails and mobile numbers
+- Simple user registration
 - User login and logout
 - Post articles and comments for logged-in users
 - Like and dislike articles
@@ -24,7 +24,7 @@ A Spring Boot RESTful API for a simple article portal. Features include user reg
 | 1   | /user                    | POST        | Register a new user            | User fields: Username (unique), Mobile Number, Password, Email (unique), Privileges (list), Comments (list)                                       | Anonymous publicly allowed       |
 | 2   | /login                   | GET         | Basic authentication           |                                                                                                                                                  | Anonymous publicly allowed       |
 | 3   | /logout                  | GET         | Logout the logged-in user      |                                                                                                                                                  | For any logged-in user           |
-| 4   | /article                 | POST        | Add new article                | Article fields (all required): Title (less than 100 characters), Body (less than 500 characters), Author (the logged-in username), CreatedAt, Image, Number of likes, Number of dislikes, Disabled (boolean) | USERS only                       |
+| 4   | /article                 | POST        | Add new article                | Article fields (all required): Title (less than 100 characters), Body (less than 500 characters), Author (the logged-in username), CreatedAt, Number of likes, Number of dislikes, Disabled (boolean) | USERS only                       |
 | 5   | /article/{id}            | GET         | Return an article of specific id | Id is a path variable of a specific article in the DB                                                                                            | Anonymous publicly allowed       |
 | 6   | /article                 | GET         | Return the article list with pagination | Spring Pageable params                                                                                                                           | Anonymous publicly allowed       |
 | 7   | /article/{id}            | DELETE      | Delete a specific article      | Id is a path variable of a specific article in the DB                                                                                            | Users can delete their own articles only. |
