@@ -7,7 +7,6 @@ A Spring Boot RESTful API for a simple article portal. Features include user reg
 - [Features](#features)
 - [Endpoints](#endpoints)
 - [Examples](#examples)
-- [Usage](#usage)
 
 ## Features
 - Simple user registration using emails and mobile numbers
@@ -28,14 +27,13 @@ A Spring Boot RESTful API for a simple article portal. Features include user reg
 | 4   | /article                 | POST        | Add new article                | Article fields (all required): Title (less than 100 characters), Body (less than 500 characters), Author (the logged-in username), CreatedAt, Image, Number of likes, Number of dislikes, Disabled (boolean) | USERS only                       |
 | 5   | /article/{id}            | GET         | Return an article of specific id | Id is a path variable of a specific article in the DB                                                                                            | Anonymous publicly allowed       |
 | 6   | /article                 | GET         | Return the article list with pagination | Spring Pageable params                                                                                                                           | Anonymous publicly allowed       |
-| 7   | /article/{id}/image      | GET         | Returns the images of a specific article | (a plus)                                                                                                                                         | Anonymous publicly allowed       |
-| 8   | /article/{id}            | DELETE      | Delete a specific article      | Id is a path variable of a specific article in the DB                                                                                            | Users can delete their own articles only. |
-| 9   | /article/{id}/comment    | POST        | Create a comment for a specific article | Id is a path variable of a specific article in the DB, Comment fields (all required): Text ( < 100 character), CreatedAt, User (logged-in user name) | USERS only                       |
-| 10  | /article/{id}/comment    | GET         | Return the list of comments of a specific article |                                                                                                                                                  | Anonymous publicly allowed       |
-| 11  | /article/{id}/like       | PUT         | Add one like                   |                                                                                                                                                  | USERS only                       |
-| 12  | /article/{id}/dislike    | PUT         | Add one dislike                |                                                                                                                                                  | USERS only                       |
-| 13  | /article/{id}/disable    | PUT         | Disable the article            | (make it true)                                                                                                                                    | ADMIN only                       |
-| 14  | /article/{id}/enable     | PUT         | Enable the article             | (make it false)                                                                                                                                  | ADMIN only                       |
+| 7   | /article/{id}            | DELETE      | Delete a specific article      | Id is a path variable of a specific article in the DB                                                                                            | Users can delete their own articles only. |
+| 8   | /article/{id}/comment    | POST        | Create a comment for a specific article | Id is a path variable of a specific article in the DB, Comment fields (all required): Text ( < 100 character), CreatedAt, User (logged-in user name) | USERS only                       |
+| 9  | /article/{id}/comment    | GET         | Return the list of comments of a specific article |                                                                                                                                                  | Anonymous publicly allowed       |
+| 10  | /article/{id}/like       | PUT         | Add one like                   |                                                                                                                                                  | USERS only                       |
+| 11  | /article/{id}/dislike    | PUT         | Add one dislike                |                                                                                                                                                  | USERS only                       |
+| 12  | /article/{id}/disable    | PUT         | Disable the article            | (make it true)                                                                                                                                    | ADMIN only                       |
+| 13  | /article/{id}/enable     | PUT         | Enable the article             | (make it false)                                                                                                                                  | ADMIN only                       |
 
 ## Examples
 
@@ -66,6 +64,7 @@ A Spring Boot RESTful API for a simple article portal. Features include user reg
 ```
 
 ### Pagination URL
+```url
 localhost:8080/article/1?pageNo=0&pageSize=3
-
+```
 
