@@ -1,7 +1,7 @@
 # Article Portal API
 
 ## Description
-A Spring Boot RESTful API for a simple article portal. Features include user registration, login, article and comment management, and administrative controls.
+A Spring Boot RESTful API for a simple article portal.
 
 ## Table of Contents
 - [Features](#features)
