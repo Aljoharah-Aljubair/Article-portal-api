@@ -1,7 +1,7 @@
 # Article Portal API
 
 ## Description
-A Spring Boot RESTful API for a simple article portal.
+A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.
 
 ## Table of Contents
 - [Features](#features)
