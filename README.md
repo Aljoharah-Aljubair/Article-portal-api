@@ -7,10 +7,8 @@
 <p align="center">A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.</p>
 
 ## Table of Contents
-- [Features](#features)
-- [Endpoints](#endpoints)
-- [Examples](#examples)
-- [Frontend](#Frontend)
+- [Features](#features) - [Endpoints](#endpoints)
+- [Examples](#examples) - [Frontend](#Frontend)
 - [Interfaces](#Interfaces)
 
 ## Features
