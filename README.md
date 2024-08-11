@@ -78,4 +78,21 @@ The frontend of this article portal is developed using Angular@14 and Angular Ma
 
 ### User Registration
 ![Registration](screenshots/Registration.png)
-`screenshots/Registration.png`
+
+### User Login
+![Login](screenshots/Login.png)
+
+### User
+#### Article List
+![Article-List](screenshots/list-article.png)
+
+#### Add Article
+![Add Article](screenshots/creat-article.png)
+
+#### Article Details
+![Article Details](screenshots/ Article-detail.png)
+
+### Admin
+
+
+
