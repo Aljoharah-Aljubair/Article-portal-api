@@ -1,7 +1,10 @@
-<img src="screenshots/logo.png" width="200" height="200" alt="logo">
+<p align="center">
+  <img src="screenshots/logo.png" width="200" height="200" alt="Logo">
+</p>
 
-# Article Portal API
-A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.
+<h1 align="center">Article Portal API</h1>
+
+<p align="center">A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.</p>
 
 ## Table of Contents
 - [Features](#features)
