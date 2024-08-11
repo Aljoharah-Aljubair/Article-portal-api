@@ -77,4 +77,5 @@ The frontend of this article portal is developed using Angular@14 and Angular Ma
 ## Screenshots
 
 ### User Registration
+![Registration](screenshots/Registration.png)
 `screenshots/Registration.png`
