@@ -1,3 +1,4 @@
+![logo](screenshots/logo.png)
 # Article Portal API
 A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.
 
