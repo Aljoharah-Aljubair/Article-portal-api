@@ -88,7 +88,7 @@ public class AuthServiceImpl {
         UserEntity user = userRepository.findByUsername(username);
         String role = user.getPrivileges().stream()
                 .map(Privilege::getType)
-                .collect(Collectors.joining(", ")); // Assuming user can have multiple roles   .map(Privilege::getType) // Convert each Privilege to its type description.
+                .collect(Collectors.joining(", "));
         return  role;
     }
 
