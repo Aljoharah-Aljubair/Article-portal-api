@@ -84,13 +84,13 @@ The frontend of this article portal is developed using Angular@14 and Angular Ma
 
 ### User
 #### Article List
-![Article-List](screenshots/list-article.png)
+![Article-List](screenshots/List-article.png)
 
 #### Add Article
-![Add Article](screenshots/creat-article.png)
+![Add Article](screenshots/Creat-article.png)
 
 #### Article Details
-![Article Details](screenshots/ Article-detail.png)
+![Article Details](screenshots/Article-detail.png)
 
 ### Admin
 
