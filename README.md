@@ -91,8 +91,10 @@ The frontend of this article portal is developed using Angular@14 and Angular Ma
 
 #### Article Details
 ![Article Details](screenshots/Article-detail.png)
-
+<br>
 ### Admin
+#### Article Details
+![Article Details](screenshots/Article-detail-admin.png)
 
 
 
