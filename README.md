@@ -7,6 +7,7 @@ A Spring Boot RESTful API for a simple article portal.
 - [Features](#features)
 - [Endpoints](#endpoints)
 - [Examples](#examples)
+- [Frontend](#Frontend)
 
 ## Features
 - Simple user registration
@@ -16,6 +17,7 @@ A Spring Boot RESTful API for a simple article portal.
 - Admin user controls for disabling articles
 - Pagination for article listing
 - Validation using `@Valid` for all endpoints
+- JWT-based authentication
 
 ## Endpoints
 
@@ -68,3 +70,5 @@ A Spring Boot RESTful API for a simple article portal.
 localhost:8080/article/1?pageNo=0&pageSize=3
 ```
 
+## Frontend
+The frontend of this article portal is developed using Angular@14 and Angular Material for styling. It includes components for user registration, login, article listing, article creation, and commenting. The Angular application communicates with the Spring Boot API to perform the necessary CRUD operations and display data to the users. Authentication is handled using JWT, ensuring secure and efficient user sessions.
