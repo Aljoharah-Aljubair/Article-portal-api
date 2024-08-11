@@ -1,4 +1,5 @@
-![logo](screenshots/logo.png)
+<img src="screenshots/logo.png" width="300" height="200" alt="logo">
+
 # Article Portal API
 A Spring Boot RESTful API for a simple article portal with an Angular@14 frontend.
 
