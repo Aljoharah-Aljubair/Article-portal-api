@@ -1,0 +1,24 @@
+<div class="disabeled-article-list">
+
+  <div *ngIf="articles.length > 0; else noArticles">
+    <div class="article-container" *ngFor="let article of articles">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{article.title}}</mat-card-title>
+          <mat-card-subtitle>Posted By: {{article.authorUsername}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{article.body | slice:0:80}}...</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="viewArticle(article.id)" class="button-icon-animate">
+            <mat-icon>expand_more</mat-icon> Read More
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <ng-template #noArticles>
+    <div class="no-articles">No articles available.</div>
+  </ng-template>
+</div>

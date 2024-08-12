@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <img src="assets/logo.png" alt="Logo" style="height:40px; margin-right: 10px;">
+  <span style="color:#3F51B5;">Article Portal</span>
+  <span class="spacer"></span>
+
+  <button mat-raised-button color="primary" class="toolbar-button" *ngIf="isLoggedIn && !isAdmin"(click)="onClick_creatArticle()">
+    <mat-icon>create</mat-icon> Create Article
+  </button>
+
+  <button mat-raised-button color="primary" class="toolbar-button" *ngIf="isLoggedIn && isAdmin" (click)="onClick_disabeledArticle()">
+    <mat-icon>block</mat-icon> Disabled Articles
+  </button>
+
+  <button mat-raised-button color="primary" class="toolbar-button" (click)="onClick_listArticle()">
+    <mat-icon>list</mat-icon> List of Articles
+  </button>
+
+  <button mat-raised-button color="primary" class="toolbar-button" *ngIf="!isLoggedIn" (click)="onClick_login()">
+    <mat-icon>login</mat-icon> Login
+  </button>
+
+  <button mat-raised-button color="primary" class="toolbar-button" *ngIf="!isLoggedIn" (click)="onClick_register()">
+    <mat-icon>person_add</mat-icon> Signup
+  </button>
+
+
+  <button mat-raised-button color="primary" class="toolbar-button" *ngIf="isLoggedIn" (click)="onClick_logout()">
+    <mat-icon>logout</mat-icon> Logout
+  </button>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

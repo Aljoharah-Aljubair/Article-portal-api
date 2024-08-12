@@ -1,0 +1,25 @@
+<mat-card class="center-card">
+  <mat-card-content>
+    <div class="form-container">
+      <form [formGroup]="postForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" required>
+          <mat-error *ngIf="postForm.controls['title'].hasError('required')">Title is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Body</mat-label>
+          <textarea matInput rows="5" formControlName="body" required></textarea>
+          <mat-error *ngIf="postForm.controls['body'].hasError('required')">Body is required</mat-error>
+        </mat-form-field>
+      </form>
+      <div class="button-container">
+        <button mat-raised-button color="primary" class="submit-button" [disabled]="postForm.invalid"
+          (click)="createArticle()">
+          <mat-icon>check</mat-icon> Create New Article
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
