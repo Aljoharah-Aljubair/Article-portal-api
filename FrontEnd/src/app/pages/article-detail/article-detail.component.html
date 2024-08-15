@@ -1,0 +1,66 @@
+<mat-card class="article-detail" *ngIf="article">
+  <mat-card-header>
+    <mat-card-title class="main-title">{{ article.title }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="article-body">{{ article.body }}</p>
+  </mat-card-content>
+
+  <div class="image-gallery">
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let file of article.articleImages; let i = index;">
+        <img [src]="file.url" alt="Article Image">
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <mat-divider></mat-divider>
+  <br>
+  <mat-card-content class="comments-section">
+    <mat-card-title class="main-title">Comments</mat-card-title>
+    <div class="comment-container" *ngFor="let comment of comments">
+      <mat-card class="comment-card">
+        <mat-card-header>
+          <mat-card-subtitle>Created by: {{ comment.username }} | Created at: {{ comment.createdAT }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="comment-content">{{ comment.content }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <div *ngIf="isAdmin">
+    <mat-card-actions>
+      <button mat-raised-button (click)="disable()">
+        <mat-icon class="warning-icon">warning</mat-icon> Disable
+      </button>
+    </mat-card-actions>
+  </div>
+
+  <br>
+  <div *ngIf="!isAdmin && isLoggedIn">
+    <mat-card-content class="add-comment">
+      <mat-card-title class="main-title">Add a Comment</mat-card-title>
+      <mat-form-field appearance="fill">
+        <textarea matInput [(ngModel)]="newComment" placeholder="Write your comment here" rows="4"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="submitComment()">Submit</button>
+      <button mat-raised-button color="primary" class="btn-deleteArticle" (click)="deleteArticle()">Delete</button>
+    </mat-card-content>
+
+    <mat-card-actions class="like-dislike-actions">
+      <button mat-icon-button (click)="likeArticle()">
+        <mat-icon>thumb_up</mat-icon>
+        <span>{{ article.numberOfLikes }}</span>
+      </button>
+      <button mat-icon-button (click)="dislikeArticle()">
+        <mat-icon>thumb_down</mat-icon>
+        <span>{{ article.numberOfDislikes }}</span>
+      </button>
+    </mat-card-actions>
+  </div>
+</mat-card>

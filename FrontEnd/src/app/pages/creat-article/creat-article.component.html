@@ -1,0 +1,55 @@
+<mat-card class="center-card">
+  <mat-card-content>
+    <div class="form-container">
+
+      <form #articleForm="ngForm" (ngSubmit)="addArticle(articleForm)">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput  [(ngModel)]="article.title" name="articleTitle" required>
+          <!-- <mat-error *ngIf="postForm.controls['title'].hasError('required')">Title is required</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Body</mat-label>
+          <textarea matInput [(ngModel)]="article.body" name="articleBody"  required></textarea>
+          <!-- <mat-error *ngIf="postForm.controls['body'].hasError('required')">Body is required</mat-error> -->
+        </mat-form-field>
+
+      
+
+
+      <div class="button-container">
+        <button mat-raised-button type="submit" color="primary" class="submit-button">
+          <mat-icon>check</mat-icon> Create New Article</button>
+      </div>
+      </form>
+    </div>
+  </mat-card-content>
+
+  <div class="col-6">
+    <div>
+      <input
+      multiple 
+      type="file"  
+      #selectFile
+      value="select"
+      (change)="onFileSelected($event)">
+    </div>
+    <div calss="mt-5">
+      <div class="row">
+        <mat-grid-list cols="4" rowHeight="1:1">
+          <mat-grid-tile *ngFor="let file of article.articleImages; let i = index;">
+            <div style="position: relative;">
+              <span class="btn-remove-image" (click)="removeImages(i)">X</span>
+            <img [src]="file.url" width="100px" height="100px">
+            </div>
+
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+    </div>
+
+  </div>
+</mat-card>
