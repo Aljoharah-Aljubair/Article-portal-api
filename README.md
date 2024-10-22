@@ -8,8 +8,8 @@
 
 ## Table of Contents
 - [Features](#features) - [Endpoints](#endpoints)
-- [Examples](#examples) - [Frontend](#Frontend)
-- [Interfaces](#Interfaces)
+- [Examples](#examples) - [Frontend](#frontend)
+- [Interfaces](#interfaces)
 
 ## Features
 - Simple user registration
@@ -18,8 +18,10 @@
 - Like and dislike articles
 - Admin user controls for disabling articles
 - Pagination for article listing
+- Search for articles by content and title
 - Validation using `@Valid` for all endpoints
 - JWT-based authentication
+- Translation of articles and comments using the [Helsinki-NLP/opus-mt-tc-big-en-ar](https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-en-ar) AI model from Hugging Face
 
 ## Endpoints
 
@@ -33,11 +35,13 @@
 | 6   | /article                 | GET         | Return the article list with pagination | Spring Pageable params                                                                                                                           | Anonymous publicly allowed       |
 | 7   | /article/{id}            | DELETE      | Delete a specific article      | Id is a path variable of a specific article in the DB                                                                                            | Users can delete their own articles only. |
 | 8   | /article/{id}/comment    | POST        | Create a comment for a specific article | Id is a path variable of a specific article in the DB, Comment fields (all required): Text ( < 100 character), CreatedAt, User (logged-in user name) | USERS only                       |
-| 9  | /article/{id}/comment    | GET         | Return the list of comments of a specific article |                                                                                                                                                  | Anonymous publicly allowed       |
+| 9   | /article/{id}/comment    | GET         | Return the list of comments of a specific article |                                                                                                                                                  | Anonymous publicly allowed       |
 | 10  | /article/{id}/like       | PUT         | Add one like                   |                                                                                                                                                  | USERS only                       |
 | 11  | /article/{id}/dislike    | PUT         | Add one dislike                |                                                                                                                                                  | USERS only                       |
-| 12  | /article/{id}/disable    | PUT         | Disable the article            | (make it true)                                                                                                                                    | ADMIN only                       |
-| 13  | /article/{id}/enable     | PUT         | Enable the article             | (make it false)                                                                                                                                  | ADMIN only                       |
+| 12  | /article/{id}/disable    | PUT         | Disable the article            | make it true                                                                                                                                    | ADMIN only                       |
+| 13  | /article/{id}/enable     | PUT         | Enable the article             | make it false                                                                                                                                  | ADMIN only                       |
+| 14  | /api/translate           | POST        | Translate to Arabic            | Translates the provided article or comment content into Arabic using the AI translation model.                                                    | Anonymous publicly allowed       |
+
 
 ## Examples
 
@@ -55,8 +59,7 @@
 ```json
 {
   "title": "An Interesting Article",
-  "body": "This is the body of the article",
-  "disabled": false
+  "body": "This is the body of the article"
 }
 ```
 
@@ -65,11 +68,6 @@
 {
   "content": "This is a very insightful article!"
 }
-```
-
-### Pagination URL
-```url
-localhost:8080/article/1?pageNo=0&pageSize=3
 ```
 
 ## Frontend
@@ -85,18 +83,19 @@ The frontend of this article portal is developed using Angular@14 and Angular Ma
 
 ### -User
 #### Article List
-![Article-List](screenshots/List-article.png)
+![Article-List](screenshots/List-article-1.png)
 
 #### Add Article
 ![Add Article](screenshots/Creat-article.png)
 
 #### Article Details
-![Article Details](screenshots/Article-detail.png)
+![Article Details](screenshots/Article-detail-1.png)
+![Article Details](screenshots/Article-detail-2.png)
 
 
 ### -Admin
 #### Article Details
-![Article Details](screenshots/Article-detail-admin.png)
+![Article Details](screenshots/Article-detail-admin-1.png)
 
 
 
