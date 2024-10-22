@@ -1,0 +1,23 @@
+
+.article-portal-title {
+  color: #3F51B5;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-button {
+  margin-left: 10px;
+}
+.toolbar-button:hover{
+  background-color: #6a77c6;
+}
+
+mat-toolbar {
+  /* background-color:#6a77c6; #3F51B5; */
+  color: white;
+  padding: 0 20px;
+}
